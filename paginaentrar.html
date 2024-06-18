@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="lion-removebg-preview paralogin.png">
+</head>
+<body>
+  <style>
+  
+   
+    body {
+      
+      width: 100vw;
+      height: 100vh;
+      background-image: url(bluelion.png );
+      display: flex;
+    }
+      
+    
+   .treino {
+    display: flex;
+    flex-direction:column;
+    text-align: left; 
+    height: 20cm;
+    width: 15cm;
+    background-color: aqua;
+    border-radius: 15px;
+    position: relative;
+    padding: 5%;
+   
+    left: 50%;
+    transform: translate(-50%, 5%);
+   
+   }
+   .butreino{
+    background-color: rgb(128, 128, 194);
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: larger;
+    width:4cm;
+    
+   }
+   .butreino:hover {
+     filter: saturate(2.0);
+     
+   }
+   .destacar {
+    font-size:20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: black;
+   
+   }
+   .volts {
+    background-color: rgb(84, 114, 197);
+    border-radius: 10px;
+    height: 1cm;
+    width: 3cm;
+    
+   }
+
+   .balança {
+    height: 6cm;
+    width: 6cm;
+    
+   }
+   .s {
+    color: blueviolet;
+    
+   }
+ 
+@media screen and (max-width:768px){
+  .treino {
+      width: 70%;
+    }
+}
+  
+ 
+  </style>
+  <div class="treino">
+    <form id="meuFormulario">
+        <label for="nome">Olá!</label>
+        Como podemos te chamar?<input type="text" id="nome" name="nome">
+        <button type="submit">Enviar</button>
+      <hr class="s"> <br>
+       
+      </form>
+    <p class="destacar"> Veja seu treino de costas e biceps clicando</p> <button class="butreino"><a href="paginatreino.html">aqui</a></button>
+      <br><br>
+      <p class="destacar">Veja seu treino de pernas clicando</p> <button class="butreino"><a href="paginatreino2.html">aqui </a></button>
+      <br> <br>
+
+      <p class="destacar">Veja seu treino de peito, ombro e triceps clicando</p> <button class="butreino"><a href="paginatreino3.html">aqui</a></button>
+
+      <p class="destacar">Calcule seu IMC clicando na balança</p> <a href="calcIMC.html"><img src="balanca-28359-removebg-preview.png" class="balança" ></a>
+      <br>   
+     
+      <center><button class="volts"><a href="index.html">sair</a></button>
+      <button class="volts"><a href="pagina2.html">voltar</a></button></center>
+      <button class="volts"> <a href="fim.html">FIM!</a></button>
+     </div>
+      <br> <br>
+      
+
+    
+
+<script>
+const formulario = document.getElementById('meuFormulario');
+const nomeInput = document.getElementById('nome');
+const mensagemParagrafo = document.createElement('p'); 
+formulario.addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita o envio padrão do formulário
+
+  const nome = nomeInput.value;
+  mensagemParagrafo.textContent = `Olá, ${nome}!`; 
+
+  formulario.appendChild(mensagemParagrafo); 
+}); 
+
+
+</script>
+
+   
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="lion-removebg-preview paralogin.png">
+  <title>Calculadora de IMC</title>
+   </head>
+<body>
+    <style>
+        body {
+            background: linear-gradient(to right,  #070d6d, #1d27a7, #86a8e7, #91eae4);
+        }
+        .tudo {
+            background-color: aqua;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 10cm;
+            width: 15cm;
+            align-items: center;
+            position: relative;
+    
+    
+    left: 50%;
+    transform: translate(-50%, 20%);
+
+        }
+        .calcIMC {
+          background-color: #86a8e7;
+          border-radius: 10px;
+
+        }
+        .calcIMC:hover {
+          filter: saturate(10.0);
+        }
+        .volts {
+           background-color: aqua;
+           border-radius: 10px;
+           padding: 5px;
+          
+        }
+        .volts:hover {
+          filter: saturate(5.0);
+        }
+        @media screen and (max-width:768px){
+          .tudo {
+            width: 70%;
+          }
+        }
+    </style>
+    <main class="tudo">
+  <h1>Calculadora de IMC</h1>
+  <p>Insira seus dados:</p>
+  <label for="altura">Altura (em metros):</label>
+  <input type="number" id="altura" required>
+  <br>
+  <label for="peso">Peso (em kg):</label>
+  <input type="number" id="peso" required>
+  <br>
+  <button onclick="calcularIMC()" class="calcIMC">Calcular IMC</button>
+  <br>
+  <div id="resultado"></div>
+  </main>
+  <button class="volts"><a href="paginaentrar.html" >Voltar</a></button>
+<script>
+
+    function calcularIMC() {
+      const altura = parseFloat(document.getElementById('altura').value);
+      const peso = parseFloat(document.getElementById('peso').value);
+    
+      if (!altura || !peso) {
+        alert('Preencha todos os campos!');
+        return;
+      }
+    
+      const imc = peso / (altura * altura);
+      const classificacao = classificarIMC(imc);
+    
+      const resultado = `
+        <p>Seu IMC é: ${imc.toFixed(2)}</p>
+        <p>Classificação: ${classificacao}</p>
+      `;
+    
+      document.getElementById('resultado').innerHTML = resultado;
+    }
+    
+    function classificarIMC(imc) {
+      if (imc < 18.5) {
+        return 'Desnutrição';
+      } else if (imc < 25) {
+        return 'Normal';
+      } else if (imc < 30) {
+        return 'Sobrepeso';
+      
+      } else {
+        return 'Obesidade';
+      }
+    }
+    </script>
+ </body>
+</html>

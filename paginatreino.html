@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="lion-removebg-preview paralogin.png">
+</head>
+<style>
+    body {
+        background: linear-gradient(to right, #4e56be, #101888, #10025f, #020135);
+        text-align: center;
+       
+    }
+    .title{
+        text-align: center;
+    }
+    .exercise {
+        font-size: xx-large;
+            color: white;
+            margin: 1rem 0;
+    }
+    .eximg {
+        height:10cm;
+        width: 10;
+        border-radius: 40px;
+       
+   
+    }
+    .destaque {
+        color: white;
+    }
+   
+    .cronometro{
+            color: aqua;
+            font-size: xx-large;
+        }
+    .buttons {
+        border-radius: 10px;
+        background-color: #4e56be;
+    }
+    .butcron{
+        background-color: rgb(106, 233, 233);
+        border-radius: 10px;
+        padding: 10px 20px; 
+        margin: 1rem 0; 
+    }
+    .botao {
+        background-color: aquamarine;
+        border-radius: 10px;
+    }
+    .fintren {
+        background-color: aqua;
+    }
+    @media (max-width: 768px) {
+  .eximg {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem; 
+  }
+
+  .exercise {
+    font-size: 1rem;
+  }
+}
+    
+    
+</style>
+<h1 class="title">TREINO DE COSTAS E BICEPS</h1>
+<hr>
+<p class="exercise" style="text-align: left;">puxada com pegada aberta no pulley:</p>
+
+<center><img src="costas-puxada-aberta-com-barra-no-pulley.webp" class="eximg"></center>
+<center><p class="destaque">4 séries de 12 repetições</p>
+<p class="destaque"> anotar carga: <input type="text"></p></center>
+<div class="cronometro-container">
+    <div id="cronometro1" class="cronometro">00:00:00</div>
+    <div class="buttons">
+        <button onclick="startCronometro('cronometro1')" class="butcron">Start</button>
+        <button onclick="pauseCronometro('cronometro1')"class="butcron">Pause</button>
+        <button onclick="stopCronometro('cronometro1')"class="butcron">Reset</button>
+        
+         </div>
+         <button class="botao"> concluir</button>
+       
+    </div>
+</div>
+
+
+<hr>
+<p class="exercise"  style="text-align: left;">puxada com triângulo no pulley:</p>
+<center><img src="2edbed_f174c44ab99c4ddfbac6867900ef849e~mv2.gif" class="eximg">
+    <center>
+<p class="destaque">4 séries de 12 repetições</p>
+<p class="destaque">anotar carga: <input type="text"></p>
+<div class="cronometro-container">
+    <div id="cronometro2" class="cronometro">00:00:00</div>
+    <div class="buttons">
+        <button onclick="startCronometro('cronometro2')"class="butcron">Start</button>
+        <button onclick="pauseCronometro('cronometro2')"class="butcron">Pause</button>
+        <button onclick="stopCronometro('cronometro2')"class="butcron">Reset</button>
+    </div>
+    <button class="botao"> concluir</button>
+</div>
+ <hr>
+    <p style="text-align: left;" class="exercise">Remada máquina:</p>
+     <img src="remada-sentado-com-cabos-e-triangulo-para-costas.webp" class="eximg">
+     <p class="destaque">3 séries de 15 repetições</p>
+     <p class="destaque">anotar carga <input type="text"></p>
+     <div class="cronometro-container">
+        <div id="cronometro3" class="cronometro">00:00:00</div>
+        <div class="buttons">
+            <button onclick="startCronometro('cronometro3')"class="butcron">Start</button>
+            <button onclick="pauseCronometro('cronometro3')"class="butcron">Pause</button>
+            <button onclick="stopCronometro('cronometro3')"class="butcron">Reset</button>
+        </div>
+        <button class="botao"> concluir</button>
+    </div>
+     <hr>
+     <p style="text-align: left;" class="exercise">rosca-scott unilateral</p>
+     <img src="images.jpg" class="eximg">
+     <p class="destaque">3 séries de 15 repetições</p>
+     <p class="destaque">anotar carga: <input type="text"></p>
+     <div class="cronometro-container">
+        <div id="cronometro4" class="cronometro">00:00:00</div>
+        <div class="buttons">
+            <button onclick="startCronometro('cronometro4')"class="butcron">Start</button>
+            <button onclick="pauseCronometro('cronometro4')"class="butcron">Pause</button>
+            <button onclick="stopCronometro('cronometro4')"class="butcron">Reset</button>
+        </div>
+        <button class="botao"> concluir</button>
+    </div>
+     <hr>
+     <p style="text-align: left;"class="exercise">Rosca Sentado com alteres no banco inclinado</p>
+    <center> <img src="rosca-biceps-com-halteres-no-banco-inclinado.webp" class="eximg"> </center>
+    <p class="destaque"> 4 séries de 12 repetições</p>
+    <p class="destaque">anotar carga:</p> <input type="text" >
+    <div class="cronometro-container">
+        <div id="cronometro5" class="cronometro">00:00:00</div>
+        <div class="buttons">
+            <button onclick="startCronometro('cronometro5')"class="butcron">Start</button>
+            <button onclick="pauseCronometro('cronometro5')"class="butcron">Pause</button>
+            <button onclick="stopCronometro('cronometro5')"class="butcron">Reset</button>
+        </div>
+        
+        <hr>
+        Dúvidas nos exercícios? clique <button onclick="mostraeAlerta()">aqui!</button>
+
+<p><button class="fintren"><a href="paginaentrar.html">Finalizar treino</a></button></p>
+    </div>
+    
+
+
+
+<script>
+ "use strict";
+
+class Cronometro {
+    constructor(elementId) {
+        this.element = document.getElementById(elementId);
+        this.hh = 0;
+        this.mm = 0;
+        this.ss = 0;
+        this.tempo = 1000; 
+        this.cron = null;
+    }
+
+    start() {
+        if (this.cron === null) {
+            this.cron = setInterval(() => { this.timer(); }, this.tempo);
+        }
+    }
+
+    pause() {
+        clearInterval(this.cron);
+        this.cron = null;
+    }
+
+    stop() {
+        clearInterval(this.cron);
+        this.cron = null;
+        this.hh = 0;
+        this.mm = 0;
+        this.ss = 0;
+        this.updateDisplay();
+    }
+
+    timer() {
+        this.ss++; 
+
+        if (this.ss === 60) { 
+            this.ss = 0; 
+            this.mm++; 
+
+            if (this.mm === 60) { 
+                this.mm = 0; 
+                this.hh++; 
+            }
+        }
+
+        this.updateDisplay();
+    }
+
+    updateDisplay() {
+        var format = (this.hh < 10 ? '0' + this.hh : this.hh) + ':' + (this.mm < 10 ? '0' + this.mm : this.mm) + ':' + (this.ss < 10 ? '0' + this.ss : this.ss);
+        this.element.innerText = format;
+    }
+}
+
+const cronometros = {
+    cronometro1: new Cronometro('cronometro1'),
+    cronometro2: new Cronometro('cronometro2'),
+    cronometro3: new Cronometro('cronometro3'),
+    cronometro4: new Cronometro('cronometro4'),
+    cronometro5: new Cronometro('cronometro5')
+
+};
+
+function startCronometro(id) {
+    cronometros[id].start();
+}
+
+function pauseCronometro(id) {
+    cronometros[id].pause();
+}
+
+function stopCronometro(id) {
+    cronometros[id].stop();
+}
+
+      
+       function mostraeAlerta() {
+        alert('o instrutor virá até você')
+       }
+        
+       const botoes = document.querySelectorAll('.botao');
+        const imagens = document.querySelectorAll('.exercise');
+
+        botoes.forEach((botao, index) => {
+            botao.addEventListener('click', () => {
+                const imagemAtual = imagens[index];
+                const proximaImagem = imagens[index + 1];
+
+                
+                if (proximaImagem) {
+                    proximaImagem.scrollIntoView({ behavior: 'smooth' }); 
+                }
+            });
+        });
+     
+
+      
+    
+</script>
+
+
+<body>
+    
+</body>
+</html>

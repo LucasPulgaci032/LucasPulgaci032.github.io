@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="icon" href="lion-removebg-preview paralogin.png">
+</head>
+<body id="reload">
+    <style>
+        body {
+          background:linear-gradient(to right, #070d6d, #1d27a7, #86a8e7, #91eae4);
+    }
+        
+     #loginForm{
+    display: flex;
+    flex-direction:column;
+    text-align: left; 
+    height: 10cm;
+    width: 10cm;
+    background-color: aqua;
+    border-radius: 15px;
+    position: relative;
+    padding: 5%;
+    
+    left: 50%;
+    transform: translate(-50%, 20%);
+
+     }
+     .login {
+      
+      background-color: rgb(87, 120, 212);
+      width: 4cm;
+      padding: 2px;
+      border-radius: 10px;
+      color: white;
+    
+    }
+     
+
+     .login:hover{
+      filter: saturate(3.0);
+     }
+
+     .eximg{
+      height: 5cm;
+      width: 5cm;
+      padding: 5px;
+      padding-left: 5cm;
+      padding-right: 5cm;
+      border-color: blue;
+      border-radius: 200px;
+     }
+
+     #rodape{
+        align-items: center;
+     }
+
+     .volts{
+      background-color: rgb(87, 120, 212);
+      width: 4cm;
+      padding: 2px;
+      border-radius: 10px;
+      color: white;
+    
+    }
+     
+
+     .volts:hover{
+      filter: saturate(3.0);
+     }
+     @media screen and (max-width: 768px) {
+  #loginForm {
+    width: 90%; /* Adjust form width for better usability */
+    left: auto; /* Center form horizontally on mobile */
+    transform: translate(0, 20%); /* Remove horizontal offset */
+  }
+
+  .eximg {
+    padding: 0; 
+  }
+
+}
+
+    </style>
+    <form id="loginForm" onsubmit="return validaLogin(event);">
+      <label for="email2">Email:</label>
+      <input type="email" id="email2" placeholder="Digite seu email" required>
+      <label for="password"> Senha:</label>
+      
+      <input type="password" id="senha2" placeholder="Digite sua senha" required>
+     
+      <br>
+      <button class="login" type="submit" >Login</button>
+      <br>
+      <button class="volts"><a href="index.html">voltar</a></button>
+      <img class="eximg"  src="lion-removebg-preview paralogin.png" >
+    </form>
+  
+           
+        </div>
+       
+        <script>
+      const emailGenerico = "lucaspac032@hotmail.com"; // Substitua por um email real
+      const senhaGenerica = "1234";
+
+function validaLogin(event) {
+  event.preventDefault(); // Evita o comportamento padrão do formulário
+
+  const inputEmail = document.getElementById("email2");
+  const inputSenha = document.getElementById("senha2"); // Pega o valor do input
+  const emailDigitado = inputEmail.value.trim(); // Remove espaços em branco
+  const senhaDigitada = inputSenha.value.trim();
+  if (emailDigitado !== emailGenerico) {
+    alert("Email incorreto!");
+    window.location.reload();
+  }else if (senhaDigitada !== senhaGenerica) {
+    alert("senha incorreta!");
+    window.location.reload(); 
+  }
+    
+   else {
+    alert('Login bem sucedido');
+    window.location.href = "paginaentrar.html";
+  }
+}
+
+
+
+       </script>
+    </main>
+   
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="icon" href="lion-removebg-preview paralogin.png">
+</head>
+<body>
+  <style>
+    :root {
+    background:linear-gradient(to right, #070d6d, #1d27a7, #86a8e7, #91eae4);;
+    height: 20cm;
+    width: 30cmu;
+}
+#estrutura {
+    display: flex;
+    flex-direction:column;
+    text-align: left; 
+    height: 10cm;
+    width: 10cm;
+    background-image: url(lion-removebg-preview.png);
+    border-radius: 15px;
+    position: relative;
+    padding: 5%;
+    
+    left: 50%;
+    transform: translate(-50%, 20%);}
+
+    .but{
+      background-color: rgb(87, 120, 212);
+      width: 4cm;
+      padding: 2px;
+      border-radius: 10px;
+      color: white;
+    }
+    .but:hover {
+      filter: saturate(3.0);
+    }
+   
+    
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+  #estrutura {
+    width: 70%; 
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+  #estrutura {
+    display: flex;
+    flex-direction:column;
+    text-align: left; 
+    height: 10cm;
+    width: 10cm;
+    background-image: url(lion-removebg-preview.png);
+    border-radius: 15px;
+    position: relative;
+    padding: 5%;
+    
+    left: 50%;
+    transform: translate(-50%, 20%);}
+
+  }
+
+
+
+@media screen and (max-width: 767px) {
+  #estrutura {
+    width: 90%; 
+    left: auto; 
+    transform: translate(0, 20%); 
+  }
+
+  .but {
+    font-size: 14px; 
+  }
+}
+   
+  </style>
+  <main id="estrutura">
+    <header><b>CADASTRE-SE</b></header>
+    <hr>
+    <form id="formulario" action="processar-dados.php" method="post">
+    <input id="nome" type="text" name="nome" placeholder="Digite seu nome" required> 
+    <br><br>
+     <input id="email" type="email" name="Email" placeholder="Digite seu email" required> 
+     <br><br>
+     <input id="endereço" type="text" name="endereço" placeholder="digite seu endereço" required> 
+     <br><br>
+     
+     <input id="senha" type="password" name="senha" placeholder="digite sua senha" required> 
+     
+    </form>
+    <hr>
+    <form id="form-cadastro"> <button type="submit" class="but">Cadastrar</button> </form>
+    <br>
+    <button class="but"><a href="index.html">Voltar</a></button>
+    
+     <script >const formulario = document.getElementById('formulario');
+      // Referência ao elemento "formulario" (div)
+     const nomeInput = document.getElementById('nome');
+     
+    
+     const emailInput = document.getElementById('email');
+     
+     const enderecoInput = document.getElementById('endereço');
+     
+     const senhaInput = document.getElementById('senha');
+     
+     const formCadastro = document.getElementById('form-cadastro'); // Referência ao formulário
+
+     formCadastro.addEventListener('submit', function(event) { // Evento "submit" adicionado ao formulário
+       event.preventDefault(); // Evita o envio padrão do formulário
+
+       const avisos = validarLacunas();
+
+       if (avisos) {
+         alert(avisos);
+         return;
+       }
+
+       // Processar o envio do formulário (por exemplo, enviar para o servidor)
+
+       alert('Cadastro realizado com sucesso!');
+       window.location.href = 'paginaentrar.html';
+     });
+
+     function validarLacunas() {
+       let avisos = '';
+
+       if (!nomeInput.value) {
+         avisos += ' - preencher o campo  Nome\n';
+       }
+
+       if (!emailInput.value) {
+         avisos += ' - preencher o campo Email\n';
+         
+       }
+
+       if (!enderecoInput.value) {
+         avisos += ' - preencher o campo Endereço\n';
+       }
+
+       if (!senhaInput.value) {
+         avisos += ' - preencher o campo Senha\n';
+       }
+
+       return avisos.trim() || null;
+     }
+    
+      
+    </script>
+  </main>
+</body>
+</html>
+
+       
